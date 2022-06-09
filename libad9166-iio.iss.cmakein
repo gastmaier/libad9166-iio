@@ -1,15 +1,15 @@
 [Setup]
 AppId={{96BC5CC7-C522-4883-BCCD-0F5B6CF1131D}
-AppName="libad9361"
+AppName="libad9166"
 AppVersion="@VERSION@"
 AppPublisher="Analog Devices, Inc."
 AppPublisherURL="http://www.analog.com"
 AppSupportURL="http://www.analog.com"
 AppUpdatesURL="http://www.analog.com"
-AppCopyright="Copyright 2015-@BUILD_YEAR@ ADI and other contributors"
+AppCopyright="Copyright 2022-@BUILD_YEAR@ ADI and other contributors"
 CreateAppDir=no
-LicenseFile="C:\projects\libad9361-iio\LICENSE"
-OutputBaseFilename=libad9361-setup
+LicenseFile="C:\projects\libad9166-iio\LICENSE"
+OutputBaseFilename=libad9166-setup
 OutputDir="C:\"
 Compression=lzma
 SolidCompression=yes
@@ -44,16 +44,16 @@ Name: "turkish"; MessagesFile: "compiler:Languages\Turkish.isl"
 Name: "ukrainian"; MessagesFile: "compiler:Languages\Ukrainian.isl"
 
 [Files]
-Source: "C:\projects\libad9361-iio\build-win32\Release\libad9361.dll"; DestDir: "{sys}"; Flags: 32bit
-Source: "C:\projects\libad9361-iio\build-win64\Release\libad9361.dll"; DestDir: "{sys}"; Check: Is64BitInstallMode
+Source: "C:\projects\libad9166-iio\build-win32\Release\libad9166.dll"; DestDir: "{sys}"; Flags: 32bit
+Source: "C:\projects\libad9166-iio\build-win64\Release\libad9166.dll"; DestDir: "{sys}"; Check: Is64BitInstallMode
 
-Source: "C:\projects\libad9361-iio\build-win32\test\Release\*.exe"; DestDir: "{sys}"; Check: not Is64BitInstallMode
-Source: "C:\projects\libad9361-iio\build-win64\test\Release\*.exe"; DestDir: "{sys}"; Check: Is64BitInstallMode
+Source: "C:\projects\libad9166-iio\build-win32\test\Release\*.exe"; DestDir: "{sys}"; Check: not Is64BitInstallMode
+Source: "C:\projects\libad9166-iio\build-win64\test\Release\*.exe"; DestDir: "{sys}"; Check: Is64BitInstallMode
 
-Source: "C:\projects\libad9361-iio\build-win32\Release\libad9361.lib"; DestDir: "{pf32}\Microsoft Visual Studio 12.0\VC\lib"; Check: not Is64BitInstallMode
-Source: "C:\projects\libad9361-iio\build-win64\Release\libad9361.lib"; DestDir: "{pf32}\Microsoft Visual Studio 12.0\VC\lib\amd64"; Check: Is64BitInstallMode
-Source: "C:\projects\libad9361-iio\ad9361.h"; DestDir: "{pf32}\Microsoft Visual Studio 12.0\VC\include"
-Source: "C:\projects\libad9361-iio\bindings\matlab\ad9361-wrapper.h"; DestDir: "{pf32}\Microsoft Visual Studio 12.0\VC\include"
+Source: "C:\projects\libad9166-iio\build-win32\Release\libad9166.lib"; DestDir: "{pf32}\Microsoft Visual Studio 12.0\VC\lib"; Check: not Is64BitInstallMode
+Source: "C:\projects\libad9166-iio\build-win64\Release\libad9166.lib"; DestDir: "{pf32}\Microsoft Visual Studio 12.0\VC\lib\amd64"; Check: Is64BitInstallMode
+Source: "C:\projects\libad9166-iio\ad9166.h"; DestDir: "{pf32}\Microsoft Visual Studio 12.0\VC\include"
+Source: "C:\projects\libad9166-iio\bindings\matlab\ad9166-wrapper.h"; DestDir: "{pf32}\Microsoft Visual Studio 12.0\VC\include"
 
 Source: "C:\libiio-win32\libiio.dll"; DestDir: "{sys}"; Flags: onlyifdoesntexist 32bit
 Source: "C:\libiio-win64\libiio.dll"; DestDir: "{sys}"; Check: Is64BitInstallMode; Flags: onlyifdoesntexist

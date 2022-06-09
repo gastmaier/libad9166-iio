@@ -1,12 +1,12 @@
 DOXYFILE_ENCODING      = UTF-8
-PROJECT_NAME           = "libad9361"
-PROJECT_NUMBER         = @LIBAD9361_VERSION_MAJOR@.@LIBAD9361_VERSION_MINOR@
+PROJECT_NAME           = "libad9166"
+PROJECT_NUMBER         = @LIBAD9166_VERSION_MAJOR@.@LIBAD9166_VERSION_MINOR@
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          = "Device specific library for AD936X transceivers"
+PROJECT_BRIEF          = "Device specific library for AD916X DACs"
 
 # With the PROJECT_LOGO tag one can specify an logo or icon that is included in
 # the documentation. The maximum height of the logo should not exceed 55 pixels

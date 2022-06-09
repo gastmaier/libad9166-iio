@@ -6,6 +6,6 @@ CMakeFiles
 Makefile
 cmake_install.cmake
 install_manifest.txt
-libad9361.pc
-libad9361.so*
+libad9166.pc
+libad9166.so*
 build/

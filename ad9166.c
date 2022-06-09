@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017 Analog Devices, Inc.
+ * Copyright (C) 2022 Analog Devices, Inc.
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -12,19 +12,16 @@
  * Lesser General Public License for more details.
  */
 
-#ifndef RTGETNAN_H
-#define RTGETNAN_H
-#include <stddef.h>
-#include "rtwtypes.h"
-#include "rt_nonfinite.h"
+#include "ad9166.h"
 
-extern real_T rtGetNaN(void);
-extern real32_T rtGetNaNF(void);
-
+#include <errno.h>
+#include <iio.h>
+#include <stdio.h>
+#ifdef _WIN32
+#include <windows.h>
+#else
+#include <unistd.h>
+#include <time.h>
 #endif
 
-/*
- * File trailer for rtGetNaN.h
- *
- * [EOF]
- */
+

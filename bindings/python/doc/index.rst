@@ -1,28 +1,28 @@
-libad9361-iio Python Bindings
+libad9166-iio Python Bindings
 ==================================
 
-Python bindings for the `libad9361-iio`. A device-specific library for AD936X transceivers.
+Python bindings for the `libad9166-iio`. A device-specific library for AD916X DACs.
 
 Installation
 ==================
 
-The libad9361-iio python bindings can be installed from pip
+The libad9166-iio python bindings can be installed from pip
 
 .. code-block:: bash
 
-  (sudo) pip install pylibad9361
+  (sudo) pip install pylibad9166
 
 or by grabbing the source directly
 
 .. code-block:: bash
 
-  git clone https://github.com/analogdevicesinc/libad9361-iio.git
+  git clone https://github.com/analogdevicesinc/libad9166-iio.git
   cd bindings/python
   (sudo) python3 setup.py install
 
 .. note::
 
-  On Linux the libad9361-iio python bindings are sometimes installed in locations not on path. On Ubuntu this is a common fix
+  On Linux the libad9166-iio python bindings are sometimes installed in locations not on path. On Ubuntu this is a common fix
 
   .. code-block:: bash
 

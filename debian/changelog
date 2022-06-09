@@ -1,5 +1,5 @@
-libad9361 (0.1) unstable; urgency=low
+libad9166 (0.1) unstable; urgency=low
 
   * Initial release.
 
- -- Paul Cercueil <paul.cercueil@analog.com>  Wed, 29 Jul 2015 14:46:52 +0200
+ -- Cosmin Tanislav <cosmin.tanislav@analog.com>  Thu, 9 June 2022 11:09:00 +0200

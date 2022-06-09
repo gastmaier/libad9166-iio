@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.87)
-project(libad9361-py NONE)
+project(libad9166-py NONE)
 
 if(${CMAKE_VERSION} VERSION_LESS "3.12.0")
 	if(Python3_EXECUTABLE)
@@ -20,9 +20,9 @@ if (Python3_FOUND)
 
 	configure_file(${SETUP_PY_IN} ${SETUP_PY})
 
-	configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ad9361.py  ${CMAKE_CURRENT_BINARY_DIR}/ad9361.py COPYONLY)
+	configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ad9166.py  ${CMAKE_CURRENT_BINARY_DIR}/ad9166.py COPYONLY)
 
-	add_custom_target(libad9361-py-py ALL DEPENDS ${SETUP_PY} COMMAND ${Python3_EXECUTABLE} ${SETUP_PY} --quiet build)
+	add_custom_target(libad9166-py-py ALL DEPENDS ${SETUP_PY} COMMAND ${Python3_EXECUTABLE} ${SETUP_PY} --quiet build)
 
 	if(NOT SKIP_INSTALL_ALL)
 		install(CODE "execute_process(WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR} COMMAND ${Python3_EXECUTABLE} ${SETUP_PY} install --root=\$ENV{DESTDIR}/ --prefix=${CMAKE_INSTALL_PREFIX})")
@@ -40,11 +40,11 @@ if(WITH_DOC)
 		message(FATAL_ERROR "Can not build python doc without sphinx-build")
 	endif()
 	message (STATUS "Building with Python Doc (Sphinx)")
-	set(CMAKE_HTML_DEST_DIR "${CMAKE_CURRENT_BINARY_DIR}/html/v${LIBAD9361_VERSION_MAJOR}.${LIBAD9361_VERSION_MINOR}")
+	set(CMAKE_HTML_DEST_DIR "${CMAKE_CURRENT_BINARY_DIR}/html/v${LIBAD9166_VERSION_MAJOR}.${LIBAD9166_VERSION_MINOR}")
 	configure_file(
 		${CMAKE_CURRENT_SOURCE_DIR}/doc/conf.py.in
 		${CMAKE_CURRENT_SOURCE_DIR}/doc/conf.py)
-	add_custom_command(TARGET libad9361-py-py POST_BUILD
+	add_custom_command(TARGET libad9166-py-py POST_BUILD
 		COMMAND ${CMAKE_COMMAND} -E env "LD_LIBRARY_PATH=$ENV{LD_LIBRARY_PATH}:${CMAKE_BINARY_DIR}"
 		${SPHINX_EXECUTABLE}
 			-b html

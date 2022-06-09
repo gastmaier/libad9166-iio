@@ -4,10 +4,10 @@ libdir=@CMAKE_INSTALL_PREFIX@/lib
 sharedlibdir=@CMAKE_INSTALL_PREFIX@/lib
 includedir=@CMAKE_INSTALL_PREFIX@/include
 
-Name: libad9361
-Description: Device specific library for AD936X transceivers
+Name: libad9166
+Description: Device specific library for AD916X DACs
 Version: @VERSION@
 
 Requires:
-Libs: -L${libdir} -L${sharedlibdir} -lad9361
+Libs: -L${libdir} -L${sharedlibdir} -lad9166
 Cflags: -I${includedir}

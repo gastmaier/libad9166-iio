@@ -1,1 +1,1 @@
-install (FILES ad9361-wrapper.h DESTINATION include)
+install (FILES ad9166-wrapper.h DESTINATION include)

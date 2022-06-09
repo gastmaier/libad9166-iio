@@ -3,5 +3,5 @@ Library Functions
 
 API Functions
 --------------
-.. automodule:: ad9361
+.. automodule:: ad9166
    :members:

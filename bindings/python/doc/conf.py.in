@@ -23,10 +23,10 @@ import iio
 
 project = '@PROJECT_NAME@'
 copyright = '2021, Analog Devices, Inc.'
-author = 'Paul Cercueil <paul.cercueil@analog.com>'
+author = 'Cosmin Tanislav <cosmin.tanislav@analog.com>'
 
 # The full version, including alpha/beta/rc tags
-release = '@LIBAD9361_VERSION@'
+release = '@LIBAD9166_VERSION@'
 
 
 # -- General configuration ---------------------------------------------------

@@ -202,10 +202,10 @@ jobs:
       sourceFolder: '$(Agent.BuildDirectory)/s/build/Release'
       targetFolder: '$(Build.ArtifactStagingDirectory)'
   - task: CopyFiles@2
-    displayName: 'Copy ad9361.h header'
+    displayName: 'Copy ad9166.h header'
     inputs:
       sourceFolder: '$(Agent.BuildDirectory)/s/'
-      contents: 'ad9361.h'
+      contents: 'ad9166.h'
       targetFolder: '$(Build.ArtifactStagingDirectory)'
   - task: PublishPipelineArtifact@1
     condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
