@@ -18,6 +18,8 @@
 #ifndef __AD9166_H__
 #define __AD9166_H__
 
+#include <stddef.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -44,12 +46,33 @@ extern "C" {
 
 struct iio_context;
 struct iio_device;
+struct iio_channel;
+
+struct ad9166_calibration_data {
+	double *freqs;
+	double *offsets;
+	double *gains;
+	size_t len;
+};
 
 /* ---------------------------------------------------------------------------*/
 /* ------------------------- Top-level functions -----------------------------*/
 /** @defgroup TopLevel Top-level functions
  * @{ */
 
+__api int ad9166_context_find_calibration_data(struct iio_context *ctx,
+					       const char *name,
+					       struct ad9166_calibration_data **data);
+
+__api int ad9166_channel_set_freq(struct iio_channel *ch,
+				  unsigned long long int freq);
+
+__api int ad9166_device_set_amplitude(struct iio_device *dev,
+				      unsigned long long int amplitude);
+
+__api int ad9166_device_set_iofs(struct iio_device *dev,
+				 struct ad9166_calibration_data *data,
+				 unsigned long long int freq);
 
 /** @} */
 
