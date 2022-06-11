@@ -3,9 +3,14 @@ CPackConfig.cmake
 CPackSourceConfig.cmake
 CMakeCache.txt
 CMakeFiles
+CTestTestfile.cmake
+bindings/CTestTestfile.cmake
+test/CTestTestfile.cmake
 Makefile
 cmake_install.cmake
+cmake_uninstall.cmake
 install_manifest.txt
 libad9166.pc
 libad9166.so*
+libad9166-iio.iss
 build/
