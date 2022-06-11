@@ -6,6 +6,7 @@ CMakeFiles
 CTestTestfile.cmake
 bindings/CTestTestfile.cmake
 test/CTestTestfile.cmake
+test/CalibrateTest
 Makefile
 cmake_install.cmake
 cmake_uninstall.cmake
