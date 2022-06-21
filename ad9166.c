@@ -44,11 +44,10 @@ static int parse_array(const char *value, double **arr, size_t *len)
 	while (tk) {
 		double n;
 
-		printf("%s\n", tk);
 		n = strtod(tk, &endptr);
 
 		if (*endptr) {
-			fprintf(stderr, "Illegal character: %c\n", *endptr);
+			fprintf(stderr, "Illegal character '%c' in value '%s'\n", *endptr, tk);
 			ret = -EINVAL;
 			goto err;
 		} else if (*len == MAX_CALIB_LENGTH) {
