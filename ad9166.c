@@ -34,6 +34,7 @@
 static int parse_array(const char *value, double **arr, size_t *len)
 {
 	char *value_dup = strdup(value);
+	int ret = 0;
 
 	*arr = calloc(MAX_CALIB_LENGTH, sizeof(double));
 	*len = 0;
@@ -48,11 +49,13 @@ static int parse_array(const char *value, double **arr, size_t *len)
 
 		if (*endptr) {
 			fprintf(stderr, "Illegal character: %c\n", *endptr);
-			return -EINVAL;
+			ret = -EINVAL;
+			goto err;
 		} else if (*len == MAX_CALIB_LENGTH) {
 			fprintf(stderr, "Too many calibration values, max: %u\n",
 				MAX_CALIB_LENGTH);
-			return -EINVAL;
+			ret = -EINVAL;
+			goto err;
 		}
 
 		(*arr)[(*len)++] = n;
@@ -60,9 +63,10 @@ static int parse_array(const char *value, double **arr, size_t *len)
 		tk = strtok(NULL, ARRAY_DELIM);
 	}
 
+err:
 	free(value_dup);
 
-	return 0;
+	return ret;
 }
 
 int ad9166_context_find_calibration_data(struct iio_context *ctx,
