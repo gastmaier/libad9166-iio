@@ -81,7 +81,6 @@ set(LIBAD9166_HEADERS ad9166.h)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${LIBIIO_INCLUDEDIR})
 add_library(ad9166 ad9166.c
-            ${FD_SRC_FILES}
             ${LIBAD9166_HEADERS})
 enable_testing()
 add_subdirectory(test)
