@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "libad9166-iio-config.h"
 #include "utilities.h"
 
 #if defined(_WIN32) || \
