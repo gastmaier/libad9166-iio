@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: LGPL-2.1-or-later
 
 #include "ad9166.h"
+#include "utilities.h"
 
 #include <errno.h>
 #include <iio.h>
@@ -21,29 +22,19 @@
 
 static int parse_array(const char *value, double **arr, size_t *len)
 {
-	char *value_dup = strdup(value);
+	char *value_dup = util_strdup(value);
 	int ret = 0;
 
 	*arr = calloc(MAX_CALIB_LENGTH, sizeof(double));
 	*len = 0;
 
 	char *tk = strtok(value_dup, ARRAY_DELIM);
-	char *endptr;
 	while (tk) {
 		double n;
 
-		n = strtod(tk, &endptr);
-
-		if (*endptr) {
-			fprintf(stderr, "Illegal character '%c' in value '%s'\n", *endptr, tk);
-			ret = -EINVAL;
+		ret = util_read_double(tk, &n);
+		if (ret)
 			goto err;
-		} else if (*len == MAX_CALIB_LENGTH) {
-			fprintf(stderr, "Too many calibration values, max: %u\n",
-				MAX_CALIB_LENGTH);
-			ret = -EINVAL;
-			goto err;
-		}
 
 		(*arr)[(*len)++] = n;
 
