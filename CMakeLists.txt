@@ -81,6 +81,7 @@ set(LIBAD9166_HEADERS ad9166.h)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${LIBIIO_INCLUDEDIR})
 add_library(ad9166 ad9166.c
+            utilities.c
             ${LIBAD9166_HEADERS})
 enable_testing()
 add_subdirectory(test)
@@ -100,6 +101,12 @@ if (MSVC)
 endif()
 
 configure_file(libad9166-iio.iss.cmakein ${CMAKE_CURRENT_BINARY_DIR}/libad9166-iio.iss @ONLY)
+
+include(CheckSymbolExists)
+check_symbol_exists(strdup "string.h" HAS_STRDUP)
+check_symbol_exists(newlocale "locale.h" HAS_NEWLOCALE)
+
+configure_file(libad9166-iio-config.h.cmakein ${CMAKE_CURRENT_BINARY_DIR}/libad9166-iio-config.h @ONLY)
 
 set(LIBAD9166_PC ${CMAKE_CURRENT_BINARY_DIR}/libad9166.pc)
 configure_file(libad9166.pc.cmakein ${LIBAD9166_PC} @ONLY)
