@@ -104,7 +104,7 @@ int ad9166_channel_set_freq(struct iio_channel *ch,
 }
 
 int ad9166_device_set_amplitude(struct iio_device *dev,
-				unsigned long long int amplitude)
+				long long int amplitude)
 {
 	int ret;
 
