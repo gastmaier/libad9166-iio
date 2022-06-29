@@ -55,7 +55,8 @@ __api int ad9166_context_find_calibration_data(struct iio_context *ctx,
 __api int ad9166_channel_set_freq(struct iio_channel *ch,
 				  unsigned long long int freq);
 
-__api int ad9166_device_set_amplitude(struct iio_device *dev, int amplitude);
+__api int ad9166_device_set_amplitude(struct iio_device *dev,
+				      long long amplitude);
 
 __api int ad9166_device_set_iofs(struct iio_device *dev,
 				 struct ad9166_calibration_data *data,
