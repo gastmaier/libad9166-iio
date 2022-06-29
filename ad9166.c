@@ -107,7 +107,7 @@ int ad9166_device_set_amplitude(struct iio_device *dev, int amplitude)
 {
 	int ret;
 
-	unsigned int reg_amplitude_dec = pow(10, amplitude / 20.0) * 32767;
+	unsigned int reg_amplitude_dec = pow(10, amplitude / 20.0) * 0x7FFF;
 	ret = iio_device_reg_write(dev, 0x14E, reg_amplitude_dec >> 8);
 	if (ret)
 		return ret;
