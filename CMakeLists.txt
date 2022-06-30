@@ -79,7 +79,7 @@ find_path(LIBIIO_INCLUDEDIR iio.h)
 
 set(LIBAD9166_HEADERS ad9166.h)
 
-include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${LIBIIO_INCLUDEDIR})
+include_directories(${CMAKE_CURRENT_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR} ${LIBIIO_INCLUDEDIR})
 add_library(ad9166 ad9166.c
             utilities.c
             ${LIBAD9166_HEADERS})
