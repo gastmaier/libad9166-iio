@@ -26,7 +26,7 @@ from ctypes import (
     c_short,
     c_uint,
     c_ulong,
-    c_char_p
+    c_char_p,
     CDLL as _cdll,
     POINTER as _POINTER,
     Structure,
