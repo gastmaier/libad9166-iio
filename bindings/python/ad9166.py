@@ -27,6 +27,7 @@ from ctypes import (
     c_uint,
     c_ulong,
     c_char_p,
+    c_size_t,
     CDLL as _cdll,
     POINTER as _POINTER,
     Structure,
@@ -64,7 +65,7 @@ class CalibrationParameters(Structure):
         ("Freqs", _POINTER(c_double)),
         ("Offsets", _POINTER(c_double)),
         ("Gains", _POINTER(c_double)),
-        ("Len", c_double),
+        ("Len", c_size_t),
     ]
 
 _ad9166_context_find_calibration_data = _lib.ad9166_context_find_calibration_data
