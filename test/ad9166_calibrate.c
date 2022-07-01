@@ -11,13 +11,13 @@
 int main(int argc, char *argv[])
 {
 	int ret;
+	const char *uri;
 
-	if (argc < 2) {
-		printf("usage: %s [uri]\n", argv[0]);
-		return -1;
-	}
+	if (argc < 2)
+		uri = "local:";
+	else
+		uri = argv[1];
 
-	char *uri = argv[1];
     	struct iio_context *ctx = iio_create_context_from_uri(uri);
 	struct iio_device *dev = iio_context_find_device(ctx, "ad9166");
 
