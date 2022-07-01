@@ -18,8 +18,17 @@ int main(int argc, char *argv[])
 	else
 		uri = argv[1];
 
-    	struct iio_context *ctx = iio_create_context_from_uri(uri);
+	struct iio_context *ctx = iio_create_context_from_uri(uri);
+	if (!ctx) {
+		fprintf(stderr, "Cannot find iio context\n");
+		return 0;
+	}
+
 	struct iio_device *dev = iio_context_find_device(ctx, "ad9166");
+	if (!dev) {
+		fprintf(stderr, "Cannot find iio device\n");
+		return 0;
+	}
 
 	struct ad9166_calibration_data *data;
 
