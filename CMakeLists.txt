@@ -74,8 +74,13 @@ set(INSTALL_LIB_DIR "${CMAKE_INSTALL_PREFIX}/lib"
 	CACHE PATH "Installation directory for libraries")
 mark_as_advanced(INSTALL_LIB_DIR)
 
-find_library(LIBIIO_LIBRARIES iio)
-find_path(LIBIIO_INCLUDEDIR iio.h)
+find_package(PkgConfig)
+if (PkgConfig_FOUND)
+	pkg_check_modules(LIBIIO libiio)
+else()
+	find_library(LIBIIO_LIBRARIES iio)
+	find_path(LIBIIO_INCLUDEDIR iio.h)
+endif()
 
 set(LIBAD9166_HEADERS ad9166.h)
 
@@ -94,6 +99,7 @@ set_target_properties(ad9166 PROPERTIES
 	C_STANDARD_REQUIRED ON
 	C_EXTENSIONS OFF
 )
+message("link ${LIBIIO_LIBRARIES}")
 target_link_libraries(ad9166 LINK_PRIVATE ${LIBIIO_LIBRARIES})
 
 if (MSVC)
